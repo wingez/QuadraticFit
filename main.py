@@ -24,21 +24,23 @@ print("Enter step")
 step = float(input())
 
 
-leastSquare = None
-bestValue = 0
+smallestError = None
+bestResult = 0
 
 c = minVal
 
 while c < maxVal:
-    sumOfSquares = 0.0
+    sumOfErrorsSquared = 0.0
+    
     for i in range(numberOfValues):
-        differens = c*xValues[i]**2 - yValues[i]
-        sumOfSquares += differens**2
+        error = c*xValues[i]**2 - yValues[i]
 
-    if leastSquare is None or sumOfSquares < leastSquare:
-        leastSquare = sumOfSquares
-        bestValue = c
+        sumOfErrorsSquared += error**2
+
+    if smallestError is None or sumOfErrorsSquared < smallestError:
+        smallestError = sumOfErrorsSquared
+        bestResult = c
         
     c+=step
 
-print("y = "+str(bestValue)+"x^2 fits the data best")
+print("y = "+str(bestResult)+"x^2 fits the data best")
