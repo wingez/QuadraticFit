@@ -1,4 +1,4 @@
-
+#Gustav LD 2016
 
 print("Number of values: ")
 numberOfValues = int(input())
@@ -32,7 +32,8 @@ c = minVal
 while c < maxVal:
     sumOfSquares = 0.0
     for i in range(numberOfValues):
-        sumOfSquares += (c*xValues[i]**2 - yValues[i])**2
+        differens = c*xValues[i]**2 - yValues[i]
+        sumOfSquares += differens**2
 
     if leastSquare is None or sumOfSquares < leastSquare:
         leastSquare = sumOfSquares
